@@ -1,0 +1,364 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: minebase - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP19.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O1 /I ".." /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\obj_msvc\minebase\Release/minebase.pch" /YX /Fo"..\obj_msvc\minebase\Release/" /Fd"..\obj_msvc\minebase\Release/" /FD /c 
+"G:\kopp\src\minesweeper\minebase\MineBase.cpp"
+"G:\kopp\src\minesweeper\minebase\MineBaseSerialize.cpp"
+"G:\kopp\src\minesweeper\minebase\PlayArray.cpp"
+"G:\kopp\src\minesweeper\minebase\StdAfx.cpp"
+]
+Creating command line "cl.exe @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP19.tmp" 
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP1A.tmp" with contents
+[
+/nologo /out:"..\obj_msvc\lib\Release\minebase.lib" 
+\kopp\src\minesweeper\obj_msvc\minebase\Release\MineBase.obj
+\kopp\src\minesweeper\obj_msvc\minebase\Release\MineBaseSerialize.obj
+\kopp\src\minesweeper\obj_msvc\minebase\Release\PlayArray.obj
+\kopp\src\minesweeper\obj_msvc\minebase\Release\StdAfx.obj
+]
+Creating command line "link.exe -lib @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP1A.tmp"
+<h3>Output Window</h3>
+Compiling...
+MineBase.cpp
+MineBaseSerialize.cpp
+PlayArray.cpp
+StdAfx.cpp
+Creating library...
+<h3>
+--------------------Configuration: minesolver - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP1B.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O1 /I ".." /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\obj_msvc\minesolver\Release/minesolver.pch" /YX /Fo"..\obj_msvc\minesolver\Release/" /Fd"..\obj_msvc\minesolver\Release/" /FD /c 
+"G:\kopp\src\minesweeper\minesolver\CFieldValue.cpp"
+"G:\kopp\src\minesweeper\minesolver\CInputField.cpp"
+"G:\kopp\src\minesweeper\minesolver\CInstanceCount.cpp"
+"G:\kopp\src\minesweeper\minesolver\CMineArray.cpp"
+"G:\kopp\src\minesweeper\minesolver\CompProbabilities.cpp"
+"G:\kopp\src\minesweeper\minesolver\CompWinProp.cpp"
+"G:\kopp\src\minesweeper\minesolver\CResultField.cpp"
+"G:\kopp\src\minesweeper\minesolver\CTerminator.cpp"
+"G:\kopp\src\minesweeper\minesolver\MineMath.cpp"
+"G:\kopp\src\minesweeper\minesolver\MineSolver.cpp"
+"G:\kopp\src\minesweeper\minesolver\SolutionEnumerator.cpp"
+"G:\kopp\src\minesweeper\minesolver\SolutionIter.cpp"
+"G:\kopp\src\minesweeper\minesolver\SolutionUtil.cpp"
+"G:\kopp\src\minesweeper\minesolver\StdAfx.cpp"
+]
+Creating command line "cl.exe @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP1B.tmp" 
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP1C.tmp" with contents
+[
+/nologo /out:"..\obj_msvc\lib\Release\minesolver.lib" 
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\CFieldValue.obj
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\CInputField.obj
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\CInstanceCount.obj
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\CMineArray.obj
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\CompProbabilities.obj
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\CompWinProp.obj
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\CResultField.obj
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\CTerminator.obj
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\MineMath.obj
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\MineSolver.obj
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\SolutionEnumerator.obj
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\SolutionIter.obj
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\SolutionUtil.obj
+\kopp\src\minesweeper\obj_msvc\minesolver\Release\StdAfx.obj
+\kopp\src\minesweeper\obj_msvc\lib\Release\minebase.lib
+]
+Creating command line "link.exe -lib @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP1C.tmp"
+<h3>Output Window</h3>
+Compiling...
+CFieldValue.cpp
+CInputField.cpp
+CInstanceCount.cpp
+CMineArray.cpp
+CompProbabilities.cpp
+G:\kopp\src\minesweeper\minesolver\CompProbabilities.cpp(221) : warning C4189: 'bSuc' : local variable is initialized but not referenced
+CompWinProp.cpp
+CResultField.cpp
+CTerminator.cpp
+MineMath.cpp
+MineSolver.cpp
+SolutionEnumerator.cpp
+SolutionIter.cpp
+SolutionUtil.cpp
+StdAfx.cpp
+Creating library...
+<h3>
+--------------------Configuration: mineuibase - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP1D.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O1 /I ".." /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\obj_msvc\mineuibase\Release/mineuibase.pch" /YX /Fo"..\obj_msvc\mineuibase\Release/" /Fd"..\obj_msvc\mineuibase\Release/" /FD /c 
+"G:\kopp\src\minesweeper\mineuibase\CUIMineFrame.cpp"
+"G:\kopp\src\minesweeper\minetest\MinePropRegTest.cpp"
+"G:\kopp\src\minesweeper\mineuibase\StdAfx.cpp"
+"G:\kopp\src\minesweeper\mineuibase\UIAux.cpp"
+"G:\kopp\src\minesweeper\mineuibase\UIBitmapUtil.cpp"
+"G:\kopp\src\minesweeper\mineuibase\UIDrawContext.cpp"
+"G:\kopp\src\minesweeper\mineuibase\UIMisc.cpp"
+]
+Creating command line "cl.exe @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP1D.tmp" 
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP1E.tmp" with contents
+[
+/nologo /out:"..\obj_msvc\lib\Release\mineuibase.lib" 
+\kopp\src\minesweeper\obj_msvc\mineuibase\Release\CUIMineFrame.obj
+\kopp\src\minesweeper\obj_msvc\mineuibase\Release\MinePropRegTest.obj
+\kopp\src\minesweeper\obj_msvc\mineuibase\Release\StdAfx.obj
+\kopp\src\minesweeper\obj_msvc\mineuibase\Release\UIAux.obj
+\kopp\src\minesweeper\obj_msvc\mineuibase\Release\UIBitmapUtil.obj
+\kopp\src\minesweeper\obj_msvc\mineuibase\Release\UIDrawContext.obj
+\kopp\src\minesweeper\obj_msvc\mineuibase\Release\UIMisc.obj
+\kopp\src\minesweeper\obj_msvc\lib\Release\minebase.lib
+]
+Creating command line "link.exe -lib @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP1E.tmp"
+<h3>Output Window</h3>
+Compiling...
+CUIMineFrame.cpp
+MinePropRegTest.cpp
+StdAfx.cpp
+UIAux.cpp
+UIBitmapUtil.cpp
+G:\kopp\src\minesweeper\mineuibase\UIBitmapUtil.cpp(80) : warning C4189: 'nTestVal' : local variable is initialized but not referenced
+UIDrawContext.cpp
+UIMisc.cpp
+Creating library...
+<h3>
+--------------------Configuration: gamecontrol - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP1F.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O1 /I ".." /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\obj_msvc\gamecontrol\Release/gamecontrol.pch" /YX /Fo"..\obj_msvc\gamecontrol\Release/" /Fd"..\obj_msvc\gamecontrol\Release/" /FD /c 
+"G:\kopp\src\minesweeper\gamecontrol\CActionRecorder.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CDocChangeObserver.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CDocHistory.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CGameDocument.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CGameDocumentBase.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CGameManager.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CGameTimer.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CGameView.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CGlobalResourceSet.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CHistoryDocument.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CJoystickInputDevice.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CKeyboardInputDevice.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CKeyboardInputDevice2.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CObserveableGameDocument.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CSolutionFieldView.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CTerminatorEsc.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\CUILayoutManager.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\FieldViews.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\GameMisc.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\InputDevices.cpp"
+"G:\kopp\src\minesweeper\gamecontrol\StdAfx.cpp"
+]
+Creating command line "cl.exe @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP1F.tmp" 
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP20.tmp" with contents
+[
+/nologo /out:"..\obj_msvc\lib\Release\gamecontrol.lib" 
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CActionRecorder.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CDocChangeObserver.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CDocHistory.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CGameDocument.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CGameDocumentBase.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CGameManager.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CGameTimer.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CGameView.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CGlobalResourceSet.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CHistoryDocument.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CJoystickInputDevice.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CKeyboardInputDevice.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CKeyboardInputDevice2.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CObserveableGameDocument.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CSolutionFieldView.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CTerminatorEsc.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\CUILayoutManager.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\FieldViews.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\GameMisc.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\InputDevices.obj
+\kopp\src\minesweeper\obj_msvc\gamecontrol\Release\StdAfx.obj
+]
+Creating command line "link.exe -lib @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP20.tmp"
+<h3>Output Window</h3>
+Compiling...
+CActionRecorder.cpp
+G:\kopp\src\minesweeper\gamecontrol\CActionRecorder.cpp(40) : warning C4189: 'bSuc' : local variable is initialized but not referenced
+G:\kopp\src\minesweeper\gamecontrol\CActionRecorder.cpp(46) : warning C4189: 'nElms' : local variable is initialized but not referenced
+CDocChangeObserver.cpp
+CDocHistory.cpp
+CGameDocument.cpp
+CGameDocumentBase.cpp
+CGameManager.cpp
+CGameTimer.cpp
+CGameView.cpp
+CGlobalResourceSet.cpp
+CHistoryDocument.cpp
+CJoystickInputDevice.cpp
+CKeyboardInputDevice.cpp
+CKeyboardInputDevice2.cpp
+CObserveableGameDocument.cpp
+G:\kopp\src\minesweeper\gamecontrol\CObserveableGameDocument.cpp(22) : warning C4189: 'bSuc' : local variable is initialized but not referenced
+G:\kopp\src\minesweeper\gamecontrol\CObserveableGameDocument.cpp(29) : warning C4189: 'nElms' : local variable is initialized but not referenced
+CSolutionFieldView.cpp
+CTerminatorEsc.cpp
+CUILayoutManager.cpp
+FieldViews.cpp
+GameMisc.cpp
+InputDevices.cpp
+StdAfx.cpp
+Creating library...
+<h3>
+--------------------Configuration: MineUI_common - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP21.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O2 /I ".." /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\obj_msvc\mineui_common\Release/MineUI_common.pch" /Yu"StdAfx.h" /Fo"..\obj_msvc\mineui_common\Release/" /Fd"..\obj_msvc\mineui_common\Release/" /FD /c 
+"G:\kopp\src\minesweeper\mineui_common\CLevelMgr.cpp"
+"G:\kopp\src\minesweeper\mineui_common\CPersistentDictionary.cpp"
+"G:\kopp\src\minesweeper\mineui_common\CPersistentState.cpp"
+"G:\kopp\src\minesweeper\mineui_common\GameConstants.cpp"
+"G:\kopp\src\minesweeper\mineui_common\GameOptions.cpp"
+"G:\kopp\src\minesweeper\mineui_common\RCFileDictionary.cpp"
+"G:\kopp\src\minesweeper\mineui_common\TransientDictionary.cpp"
+]
+Creating command line "cl.exe @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP21.tmp" 
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP22.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O2 /I ".." /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\obj_msvc\mineui_common\Release/MineUI_common.pch" /Yc"StdAfx.h" /Fo"..\obj_msvc\mineui_common\Release/" /Fd"..\obj_msvc\mineui_common\Release/" /FD /c 
+"G:\kopp\src\minesweeper\mineui_common\StdAfx.cpp"
+]
+Creating command line "cl.exe @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP22.tmp" 
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP23.tmp" with contents
+[
+/nologo /out:"..\obj_msvc\mineui_common\Release\MineUI_common.lib" 
+\kopp\src\minesweeper\obj_msvc\mineui_common\Release\CLevelMgr.obj
+\kopp\src\minesweeper\obj_msvc\mineui_common\Release\CPersistentDictionary.obj
+\kopp\src\minesweeper\obj_msvc\mineui_common\Release\CPersistentState.obj
+\kopp\src\minesweeper\obj_msvc\mineui_common\Release\GameConstants.obj
+\kopp\src\minesweeper\obj_msvc\mineui_common\Release\GameOptions.obj
+\kopp\src\minesweeper\obj_msvc\mineui_common\Release\RCFileDictionary.obj
+\kopp\src\minesweeper\obj_msvc\mineui_common\Release\StdAfx.obj
+\kopp\src\minesweeper\obj_msvc\mineui_common\Release\TransientDictionary.obj
+]
+Creating command line "link.exe -lib @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP23.tmp"
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+Compiling...
+CLevelMgr.cpp
+CPersistentDictionary.cpp
+CPersistentState.cpp
+GameConstants.cpp
+GameOptions.cpp
+RCFileDictionary.cpp
+TransientDictionary.cpp
+Generating Code...
+Creating library...
+<h3>
+--------------------Configuration: storage - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP24.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O2 /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\obj_msvc\storage\Release/storage.pch" /Yu"stdafx.h" /Fo"..\obj_msvc\storage\Release/" /Fd"..\obj_msvc\storage\Release/" /FD /c 
+"G:\kopp\src\minesweeper\storage\CText.cpp"
+"G:\kopp\src\minesweeper\storage\Document.cpp"
+"G:\kopp\src\minesweeper\storage\Serializer.cpp"
+"G:\kopp\src\minesweeper\storage\Tree.cpp"
+]
+Creating command line "cl.exe @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP24.tmp" 
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP25.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O2 /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"..\obj_msvc\storage\Release/storage.pch" /Yc /Fo"..\obj_msvc\storage\Release/" /Fd"..\obj_msvc\storage\Release/" /FD /c 
+"G:\kopp\src\minesweeper\storage\StdAfx.cpp"
+]
+Creating command line "cl.exe @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP25.tmp" 
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP26.tmp" with contents
+[
+/nologo /out:"..\obj_msvc\lib\Release\storage.lib" 
+\kopp\src\minesweeper\obj_msvc\storage\Release\CText.obj
+\kopp\src\minesweeper\obj_msvc\storage\Release\Document.obj
+\kopp\src\minesweeper\obj_msvc\storage\Release\Serializer.obj
+\kopp\src\minesweeper\obj_msvc\storage\Release\StdAfx.obj
+\kopp\src\minesweeper\obj_msvc\storage\Release\Tree.obj
+]
+Creating command line "link.exe -lib @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP26.tmp"
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+Compiling...
+CText.cpp
+Document.cpp
+Serializer.cpp
+Tree.cpp
+Generating Code...
+Creating library...
+<h3>
+--------------------Configuration: MineUI_WTL - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x407 /fo"..\obj_msvc\mineui_wtl\Release/MineUI_WTL.res" /i "..\AppWiz\Include" /i "\kopp\src\minesweeper\mineui_wtl" /d "NDEBUG" "G:\kopp\src\minesweeper\mineui_wtl\MineUI_WTL.rc"" 
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP27.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O1 /I "..\AppWiz\Include" /I ".." /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "STRICT" /Fp"..\obj_msvc\mineui_wtl\Release/MineUI_WTL.pch" /Yu"stdafx.h" /Fo"..\obj_msvc\mineui_wtl\Release/" /Fd"..\obj_msvc\mineui_wtl\Release/" /FD /c 
+"G:\kopp\src\minesweeper\mineui_wtl\CMainFrame.cpp"
+"G:\kopp\src\minesweeper\mineui_wtl\CMineUIView.cpp"
+"G:\kopp\src\minesweeper\mineui_wtl\CPersistentDictWin.cpp"
+"G:\kopp\src\minesweeper\mineui_wtl\MineUI_WTL.cpp"
+"G:\kopp\src\minesweeper\mineui_wtl\UIDrawContextWTL.cpp"
+]
+Creating command line "cl.exe @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP27.tmp" 
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP28.tmp" with contents
+[
+/nologo /MD /W3 /GX /Zi /O1 /I "..\AppWiz\Include" /I ".." /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "STRICT" /Fp"..\obj_msvc\mineui_wtl\Release/MineUI_WTL.pch" /Yc"stdafx.h" /Fo"..\obj_msvc\mineui_wtl\Release/" /Fd"..\obj_msvc\mineui_wtl\Release/" /FD /c 
+"G:\kopp\src\minesweeper\mineui_wtl\stdafx.cpp"
+]
+Creating command line "cl.exe @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP28.tmp" 
+Creating temporary file "G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP29.tmp" with contents
+[
+Dinput.lib Dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib /nologo /subsystem:windows /incremental:no /pdb:"..\obj_msvc\mineui_wtl\Release/MineUI_WTL.pdb" /debug /machine:I386 /nodefaultlib:"libc.lib" /out:"..\bin_msvc\Release/MineUI_WTL.exe" /OPT:REF 
+\kopp\src\minesweeper\obj_msvc\mineui_wtl\Release\CMainFrame.obj
+\kopp\src\minesweeper\obj_msvc\mineui_wtl\Release\CMineUIView.obj
+\kopp\src\minesweeper\obj_msvc\mineui_wtl\Release\CPersistentDictWin.obj
+\kopp\src\minesweeper\obj_msvc\mineui_wtl\Release\MineUI_WTL.obj
+\kopp\src\minesweeper\obj_msvc\mineui_wtl\Release\stdafx.obj
+\kopp\src\minesweeper\obj_msvc\mineui_wtl\Release\UIDrawContextWTL.obj
+\kopp\src\minesweeper\obj_msvc\mineui_wtl\Release\MineUI_WTL.res
+\kopp\src\minesweeper\obj_msvc\lib\Release\minebase.lib
+\kopp\src\minesweeper\obj_msvc\lib\Release\minesolver.lib
+\kopp\src\minesweeper\obj_msvc\lib\Release\mineuibase.lib
+\kopp\src\minesweeper\obj_msvc\lib\Release\gamecontrol.lib
+\kopp\src\minesweeper\obj_msvc\mineui_common\Release\MineUI_common.lib
+\kopp\src\minesweeper\obj_msvc\lib\Release\storage.lib
+]
+Creating command line "link.exe @G:\DOKUME~1\hskopp\LOKALE~1\Temp\RSP29.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+stdafx.cpp
+Compiling...
+CMainFrame.cpp
+CMineUIView.cpp
+CPersistentDictWin.cpp
+MineUI_WTL.cpp
+UIDrawContextWTL.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+MineUI_WTL.exe - 0 error(s), 6 warning(s)
+</pre>
+</body>
+</html>

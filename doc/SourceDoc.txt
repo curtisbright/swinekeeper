@@ -1,0 +1,302 @@
+// file      : SourceDoc
+// begin     : Jul 30 2000
+// updated   : Jul 20 2002 
+// copyright : (C) 2000 by Hans Kopp
+// 
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+
+* Introduction 
+
+This is the implementation of a portable minesweeper clone. 
+Originally the game was only implemented to visualize the 
+results of an algorithm that solves a minesweeper instance.
+
+All code of this project is distributed under the GPL. 
+
+* Compiling the sources 
+
+** Supported OSs & Compilers  
+
+The sources have been compiled with MSVC and GCC. 
+If you want to use an other compiler, it must be able to compile STL code. 
+
+Note that my makefiles & project files copy all intermediate 
+files (.o, .obj, .a,  ...) into a directory named "obj_$(compiler)/$(config)",
+and all binaries into a directory named "bin_$(compiler)/$(config)". 
+($compiler : "cygwin", "msvc", ...; $config = "debug", "release"). 
+I'm using a perl script to update the makefiles if I want to include 
+new files. 
+
+All pathnames used below are relative to the root directory of this project. 
+
+*** WinNT/Win98 + Microsoft VC++ 6.0
+
+In the subdirectory build_msvc there's a MS DevStudio workspace 
+with which all executables of this project can be build. 
+
+With MSVC you can build the UIs MineUI_WTL, MineUI_PTC and MineUI_GLUT. 
+
+**** WTL 
+
+The WTL-Version is the most advanced UI for Truffle-Swine keeper.
+In order to compile it, you need to have WTL, which is distributed 
+together with the current Windows Platform SDK (Can be downloaded 
+from http://msdn.microsoft.com/developer/sdk). Since WTL depends on 
+ATL and ATL compiles only with Microsoft VC++ you have to own this 
+compiler. Before you compile, you have to set the path to the 
+WTL include files in the Project Settings 
+(Project/Settings/C++/Preprocessor/Additional Include Directories and 
+ Project/Settings/Resources/Additional resource include directories). 
+The WTL include files are usually located at %SDKDIR%\src\wtl\include.
+
+The WTL version has been tested with NT and 98. It does not seem to 
+run correctly with 95. 
+
+I compiled and tested the code under WinNT and Win98. 
+
+*** Qt 
+
+To compile minesweeper for Qt under MSVC you need at least the 
+freeware version of Qt from Trolltech (currently version 2.3). 
+To build it, use the workspace  build_msvc/MinesweeperQt.dsw. 
+
+Alternatively, you can use the TMAKE project file at
+build_tmake/minesweeper.pro: 
+ - tmake minesweeper.pro -o Makefile
+ - nmake 
+The executable will be created at build_tmake/minesweeper.exe 
+
+*** Cygwin (GCC 2.95.2 on WinNT)
+
+A makefile to compile the project with GCC on Windows is in the 
+subdirectory build_cygwin. The current directory must be the directory 
+that contains the makefile.
+
+There's a configuration file named build_cygwin/CompilerSettings.inc which you have
+to edit if you want to compile PTC. 
+
+Currently only the testing framework (minetest) can be built with 
+Cygwin, theres no UI for it. The PTC version compiles, but crashes 
+at startup. (I was not able to run any of the PTC samples I compiled with GCC).
+I'm using Cygwin mainly to check if the sources compile with GCC.
+
+*** Linux 
+
+**** Qt 
+
+The 'pure' Qt version is currently the only one under Linux that is
+really tested. To build it, you need to use the TMAKE project under 
+build_tmake: 
+ - set TMAKEPATH to the tmake directory named 'linux-g++'
+   (under SuSE linux, you can use settmakepath_suselinux.sh for this)  
+ - tmake minesweeper.pro -o Makefile 
+ - make 
+The executable will be created at build_tmake/minesweeper. 
+You need to have Qt and TMAKE installed. 
+
+The Qt version of minesweeper stores the local settings in a file
+named .truffleswinekeeperrc in the home directory of the current
+user. 
+
+*** Other versions 
+
+The makefile for the other version is under build_linux. 
+The current directory must be the directory that contains the makefile.
+
+There's a configuration file named build_linux/CompilerSettings.inc which you have
+to edit if you want to compile PTC or GLUT. 
+
+There are sources to compile it with KDE 1.0, KDE 2.0, PTC and
+GLUT. They were created with SuSE Linux 6.4 (Intel), gcc 2.95.2, KDE
+1.1.2, but they are not supported anymore. 
+
+**** KDE 1.0 
+
+Building with KDE 1.0 is currently not supported - there are some
+build problems that are not solved yet. 
+
+I used KDevelop 1.1 to write the KDE UI for Truffle-Swine Keeper. 
+
+The sources for the KDE version are in a separate TGZ-file to avoid the scrambling 
+of the names and the permissions of the files under Windows. 
+If you untar it in its current directory, 
+a new subdirectory 'mineui_kde' with the sources is created. 
+
+To compile the KDE version, you have to execute the following steps: 
+
+# create the minesweeper library obj_linux/lib/release/minesweeper.a
+cd build_linux
+make library_release 
+
+# compile the UI 
+cd ..
+tar fxz mineui_kde.tgz
+cd mineui_kde
+CPPFLAGS=-I../.. ./configure
+make
+(the script build_linux/make_kde.sh does exactly this) 
+
+The project files for KDevelop are included. If you use them you 
+still have to build the minesweeper library via shell.  
+
+Before you can run the program mineui_kde/mineui_kde/mineui_kde (sic), 
+you have to copy the bitmaps in ./resources/ to their proper location. 
+You can do this either by 
+- starting the program and copy the files to the path that is shown 
+  in the error message 
+- calling 'make install' in directory mineui_kde with root permissions. 
+
+I know that the build process is rather complicated - the commands 
+'cd mineui_kde; ./configure; make; make install;' should suffice. 
+However, I'm not familiar with autoconf, and couldn't figure out 
+how to do this. Any help regarding the installation under KDE is welcome.  
+
+**** KDE 2.0 
+
+Building with KDE 2.0 is currently not supported - there are some
+problems I have not solved yet. 
+
+If you want to try anyway, do the following: 
+
+ - untar mineui_kde2.tgz
+ - copy the sources into the KDE sources tree by invoking mineui_kde2/mineui_kde2/copyfiles.sh 
+ - build it using the KDevelop project 'mineui_kde2/mineui_kde2.kdevprj' 
+ 
+There are currently some problems with linking, display of the menues
+and the configuration. 
+
+*** Beos & GCC
+
+A very basic version with UI compiles and is playable. 
+It only runs in the development environment. The path names 
+for the bitmaps are hardcoded in the program, so a proper installation 
+is not possible yet. No hall of fame yet, no persistent user options. 
+
+*** GLUT 3.7
+
+MineUI_GLUT is a minimal version of the game that uses OpenGL 
+and the GLUT library from Mark Kilgard (http://reality.sgi.com/mjk/)
+to display the game graphics. 
+It supports only the expert mode and has no hall of fame. 
+
+It compiles and runs with MSVC and Linux+Mesa. 
+
+It should compile without modifications in the project settings or in 
+the makefile. 
+
+It expects the bitmap files (resources/*.bmp) in the current 
+directory. 
+
+*** PTC 1.0.0
+
+PTC is a portable library to display realtime bitmap graphics. 
+You can download it at http://www.gaffer.org/ptc. 
+The PTC version supports only the expert mode and has no hall of fame. 
+
+It compiles with MSVC and GCC under Linux. 
+The Cywin Version compiles but crashes at startup. 
+
+Since PTC has no mouse support, you have to play the game with the 
+keyboard. Use the numeric keypad or BNMGHJTYU to move the cursor, 
+and XCV as left/middle/right mouse button. Space resets the game. 
+
+Under MSVC, you have to add the include path of PTC to 
+Project/Settings/C++/Preprocessor/Additional Include Directories 
+(%PTCDIR%\sources), and the path to the PTC libraries to 
+Project/Settings/Link/Additional Library Path (%PTCDIR%\library\visual). 
+
+It expects the bitmap files (resources/*.bmp) in the current 
+directory. 
+
+* Description of the Sources 
+
+The source code can roughly separated into three parts: 
+ - an algorithm to solve a minesweeper instance (project minesolve)
+ - a implementation of the game (project gamecontrol)
+ - projects that contain the graphical user interfaces 
+
+All projects except the MineUI-projects are independant of 
+the operating system. They should compile with any Ansi-C++ 
+compatible compiler, but at least with MSVC and GCC. 
+
+** Projects 
+
+Project       System     Description 
+ 
+minebase      Any        Contains some basic classes and primitive data types. 
+                         The most important among them is CMineArrayBase. 
+mineuibase    Any        Contains auxilliary classes to implement the UI. 
+gamecontrol   Any        Game logic and game graphics. 
+minesolver    Any        Algorithms to solve a minesweeper instance. 
+minetest      Console    Testing framework and experiments.
+mineui_common Any        Implementation of persistency, hall of fame 
+storage       Any        A simple persistency mechanism, not really used currently 
+MineUI_WTL    MSVC       Minesweeper UI for MSVC + WTL, NT + 98 
+MineUI_GLUT   MSVC + GCC simple Minesweeper UI for OpenGL + GLUT, 
+MineUI_PTC    MSVC + GCC simple Minesweeper UI for PTC
+MineUI_KDE    GCC + KDE  Minesweeper UI for KDE 1.0 (not supported) 
+MineUI_KDE2   GCC + KDE  Minesweeer UI for KDE 2.0 (not supported)
+mineui_qt     Qt + Any   Minesweeper for Qt under any platform 
+
+Dependencies between the projects (transitiv dependencies are missing): 
+
+    minetest  MineUI_*
+       |        |
+       |        V
+       ---->gamecontrol-----
+                |           V
+           -------------  minesolver    
+           V           V    V
+    mineuibase         minebase     
+
+
+* Misc
+
+** Joystick support 
+
+I once intended to provide joystick support for Truffle-Swine Keeper.
+However, it showed up that it is very difficult and slow to control
+Truffle-Swine Keeper with a joystick. The remains of this attempt are 
+still in the distribution: A module that accesses a DirectX joystick 
+is under mineui_wtl\joystick. I tested it under Win98 with a Logitech 
+Wingman Digital Extrem, but it should be able to query any DX joystick. 
+A 'Input Device' class for Truffle-Swine Keeper is under 
+gamecontrol\CJoystickInputDevice.{cpp,h}. The code basically works, 
+i.e. I already played Truffle-Swine Keeper with a joystick. Because I was 
+disappointed by the results, I disconnected it from the UI. 
+
+** Testing 
+
+The project 'minetest' is used to test the code of Truffle-Swine Keeper. 
+Currently it is mainly used to test the solver: In the test, the solver 
+plays a minesweeper game and the testing code checks if the results of 
+the solver are consistent with the real values. I'm using a testing 
+framework that resembles very much the CPPUnit Testing framework from 
+Michael Feathers (www.xprogramming.com). I don't have testing code for 
+all sources of Truffle-Swine Keeper. When compiled with MSVC, the 
+test results are printed to the debug window of the DevStudio, otherwise
+to stdout. The code requires only Ansi C++. 
+
+* Contact 
+
+For questions, remarks etc. write to hskopp@hotmail.com. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

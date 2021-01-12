@@ -1,0 +1,18 @@
+- The descriptions how to build the sources are under doc/SourceDoc.txt 
+  Brief description of build process + installation + program execution: 
+  - Linux/Qt: 
+    - cd build_tmake 
+    - tmake minesweeper.pro -o Makefile (envvar TMAKEPATH must be
+  set!) 
+    -  make  
+    - minesweeper 
+  - Windows/WTL: 
+    - open workspace build_msvc/minesweeper.dsw with MS DevStudio 
+    - enter pathes to WTL include files in the project settings 
+    - build project mineui_wtl
+    - run 
+- General informations about the game are in the file doc/readme.txt 
+
+
+
+

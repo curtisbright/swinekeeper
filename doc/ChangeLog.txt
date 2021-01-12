@@ -1,0 +1,35 @@
+0.0.1 
+ - Initial published revision 
+0.0.2 
+ - BeOS version is now playable, still not complete 
+ - new Project MineUI_common: contains code for Hall of Fame etc. 
+ - Version 0.0.2 on Windows can't read persistent data of 0.0.1 
+ - fields that are marked as bombs can't be uncovered now
+0.0.3
+ - new project 'storage' to load and save objects,
+   currently not really used up to now 
+ - First attempts to add regression tests 
+ - KDE version should now be installable, still a bit complicated 
+   to build 
+0.0.4
+ - simple History mechanism, currently only available in Windows version
+ - some refactoring 
+ - started with persistency 
+0.0.5
+ - additional descriptions in AlgoDoc.txt
+0.1.0
+ - Bugfix: The first field uncovered is now never a bomb 
+   (MS Minesweeper shows the same behavior)
+ - it is now possible to terminate the solver algorithm using the 'esc' 
+   key. This is useful, since in some cases, the algorithm needs 
+   rather long to compute a solution. Further, the smilie icon changes
+   while the solution is computed. - Currently available only in WTL version. 
+   (thanks to Geofrey Sanders for suggestions regarding the last two points) 
+ - it is now possible to invoke the solver algorithm when the game is lost 
+   (before it was only possible during the game) 
+ - simple History mechanism now available in both versions 
+0.1.1
+ - Bugfix: Clicking the Smilie (reset game) sometimes caused a crash 
+   Reason: see CDocHistory::rememberDoc() 
+0.1.2 
+ - compiles now with Qt under Windows & Linux 

@@ -1,0 +1,227 @@
+// file      : AlgoDoc
+// begin     : Jul 30 2000
+// copyright : (C) 2000 by Hans Kopp
+// 
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+
+
+* Introduction 
+
+The algorithms takes a partially solved minesweeper game array, 
+i.e. an array from which some fields are uncovered and some are 
+covered. The algorithms can do the following things: 
+
+- compute which fields can only contain a bomb, and which 
+  can not contain a bomb
+- the probability that a certain field contains a bomb 
+- enumerate all possible positions of bombs 
+
+Note that the algorithm does not get the positions of the 
+bombs in the current array as input. 
+The algorithm is reliable: If it is possible to determine 
+if a field contains a bomb, it will determine this. 
+
+* Problem Description 
+
+Input: 
+A rectangular array of fields. Each field is either covered 
+or uncovered. A uncovered field always displays the number of 
+bombs in the eight neighboring fields. A covered field conveys 
+no information. 
+
+Example: 
+
+##11101#
+##2#112#
+###211#1
+#2110111
+#1000000
+#2222110
+######10
+######10 
+
+# denote covered fields 
+digits denote uncovered field. the displayed digit is the number of 
+bombs in the neighboring fields
+
+Output: 
+A list of fields that are bombs and a list of fields that are no bombs. 
+
+Example: 
+
+#_11101*
+#_2*112_
+#_*211*1
+#2110111
+#1000000
+#2222110
+#_**_*10
+#####_10 
+
+ *: bombs 
+ _: no bombs 
+ #: unknown fields 
+
+* Basic Algorithm (Determine known bombs, known no bombs) 
+
+The algorithm uses a combination of two methods: 
+- a simple heuristic to find the values (bomb/nobomb) of some fields
+- exhaustive (recursive) enumeration of all possible ways to cover 
+  the array with bombs 
+
+The heuristic is based on two rules: 
+- if the number of covered neighbors of a uncovered field is equal to 
+  the fields digit, then all neighbors must be bombs 
+- if there are as many known bombs in the neighborhood of a uncovered 
+  field as the fields digit, then all fields that are not known to 
+  be bombs must not be bombs 
+
+The algo proceeds as follows: 
+- apply the heuristic to all fields the minesweeper array 
+- divide the array into regions that are disconnected from each other
+- for each region: 
+  - select a arbitrary covered field 
+  - mark the field as known bomb and apply the algo recusively 
+  - mark the field as known no-bomb and apply the algo recusively 
+  - take the two solutions: 
+    - if a field has the same value (bomb/nobomb) in both solutions, 
+      its value is known
+    - otherwise, it is unknown 
+
+See minesolver/MineSolver.cpp/markKnownFields(). 
+
+* Enumerating the Solutions 
+
+To enumerate all solutions, I have to propagate the valid 
+solutions up through the recursion. Implementation is somewhat tricky. 
+
+See minesolver/SolutionEnumerator.cpp/compSolutionEnum(). 
+
+* Computing the probability that a certain field contains a bomb 
+
+If a array has n fields and b bombs, there are 
+( n ) ways to distribute the bombs. Each of these permutations 
+( b )
+has the same probability. To compute the probability I only have 
+to determine which permutations are valid for the current minesweeper 
+instance. The probability that a certain field is a bomb can be 
+computed as
+    number of permutations in which this field is a bomb 
+P = ----------------------------------------------------
+    total number of permutations 
+
+This basic scheme must be optimized before implementing it, 
+since the total number of permutations can be rather large. 
+
+See minesolver/MineSolver.cpp/compProbabilities()
+
+* Implementation 
+
+The implementation of all algorithms is in the 'minesolver' directory 
+of this project. The implementation is not particularily efficient since 
+it allocates by far more memory than necessary. On arrays that are not 
+larger than an 'expert' array, this causes no problems, in most cases
+the algorithm finishes below one second. 
+
+* Unsolved Problems 
+
+I don't know a algorithm that is able to determine which 
+field is the best field to uncover next. This should be the field 
+that has the highest propability to win. I guess this problem is
+very hard, probably intractable for nontrivial instances. 
+
+Here's a short description of a hopelessly slow algorithm to solve it: 
+
+Notation: 
+
+N                     : set of all integers >= 0
+
+F e {#, 0-8}          : set of possible values a field of a minesweeper array 
+                        can have. # denotes a covered field, digits an uncovered
+                        field. I don't need a symbol for bombs, since these are 
+                        always hidden during gameplay. 
+L e (0<=x<n, 0<=y<m)  : set of positions in the minesweeper array. (two integers)
+
+M(l): L -> F          : a function that represents the minesweeper array. It 
+                        maps locations to field values. 
+
+MM:                     set of all minesweeper arrays 
+
+A(M,b): (MM, N) -> N  : a function that computes the count of valid permutations 
+                        of bombs for a given minesweeper array. The second parameter 
+                        is the number of bombs to distribute in the array. 
+                        ('A' requires a nontrivial algorithm to compute, but the 
+                        function is clearly computeable in reasonable time.)
+
+U(M,l,i): (MM,L,N) -> MM : a function that creates a new minesweeper array from a 
+                           existing one by uncovering the field at position l (second 
+                           parameter), and setting the number of neigboring bombs 
+                           (third parameter). 
+
+
+The function A can e.g. be used to compute the probability that 
+a covered field at position l has exactly i neighbors: 
+
+P(M, b, l, i) = A(U(M,l,i),b)/A(M,b)
+
+The probability that there's a bomb at location l is then: 
+
+Pb(M, b, l) = 1 - SUM(i=0..8, P(M, b, l, i)) 
+
+The probability for a perfect player to win a minesweeper game M with 
+b bombs is: 
+
+Pw(M, b) = MAX(l with M(l)=#, 
+               SUM(i=0..8, 
+                   P(M, b, l, i)*Pw(U(M,l,i), b)
+                  )
+              ) 
+
+Pw(M, b) = 1 if COUNT(l with M(l)=#) = b 
+
+The function does the following: 
+
+It computes for each covered field l the probability to win 
+if the player uncovers this field first and takes the maximum 
+of these probabilities as the total probability. A perfect player 
+will always uncover this field first. 
+
+If the player uncovers field l, he has a probability P(M,b,l,i) 
+that there are i neighboring bombs. For each value i the function above
+computes the probability to win (recursive call). 
+Taking the weighted sum of these values yields the probability 
+that the user wins if he uncovers field l first. 
+
+There is the code of an attempt to compute this function in minesolver/CompWinProp.cpp. 
+However, it _VERY_ slow. So slow that it is difficult to find a nontrivial 
+example for it to solve. (called from minetest/SingleTest.cpp/CSingleTest::trySolve). 
+
+* References 
+
+Links about minesweeper alogrithms include: 
+
+- www.minesweeper.de  
+  (JavaScript Minesweeper + very good link list) 
+- How the Minesweeper Solver Works: http://www.sledgehammer.demon.co.uk/solver.htm
+- Programmer's Minesweeper: http://www.ccs.neu.edu/home/ramsdell/pgms/index.html
+- Richard Kaye's Minesweeper Page: http://www.mat.bham.ac.uk/R.W.Kaye/minesw/minesw.htm 
+  (NP completeness proof for minesweeper) 
+- I know that there was an article about minesweeper in the 
+  'Journal of Undergraduate Research', but I don't remember the 
+  Volume or the Author. I wasn't able to get a copy of it up to now. 
+
+The programs 'Open Mine' (http://home.dti.net/open/omswp.html) 
+and 'Mines 32' (http://www.herrscher.purespace.de/download.html) must have 
+a similar algorithm as Truffle-Swine Keeper inside to implement their hint Machines.
+These are the only other programs I found that reliably determine if a 
+minesweeper array is solveable. 
+
+AFAIK Truffle-Swine Keeper is the only minesweeper clone that computes 
+the probability for a bomb in a minesweeper array. 
+
+
+
+

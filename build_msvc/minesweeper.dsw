@@ -1,0 +1,212 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "MineUI_GLUT"=.\MineUI_GLUT.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name gamecontrol
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name minebase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name minesolver
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mineuibase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name storage
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "MineUI_PTC"=.\MineUI_PTC.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name gamecontrol
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name minebase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name minesolver
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mineuibase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name storage
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "MineUI_WTL"=.\MineUI_WTL.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name minebase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name minesolver
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mineuibase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name gamecontrol
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name MineUI_common
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name storage
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "MineUI_common"=.\MineUI_common.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "doc"=.\doc.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "gamecontrol"=.\gamecontrol.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "minebase"=.\minebase.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "minesolver"=.\minesolver.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name minebase
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "minetest"=.\minetest.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name minebase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name minesolver
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name storage
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "mineuibase"=.\mineuibase.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name minebase
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "storage"=.\storage.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+
